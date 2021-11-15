@@ -1,3 +1,4 @@
+import cogoToast from "cogo-toast";
 import {useCallback, useEffect, useRef, useState} from "react";
 
 const CountdownTimer = () => {
@@ -7,7 +8,7 @@ const CountdownTimer = () => {
     const secondsRef = useRef(0);
     const startTimer = useCallback(() => {
         if(!secondsRef.current && !minutesRef.current && !hoursRef.current) {
-            console.log('countdown complete')
+            cogoToast.success("Time complete")
             return;
         }
         if(secondsRef.current === 0 && minutesRef.current === 0) {
